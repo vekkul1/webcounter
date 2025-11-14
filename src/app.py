@@ -1,4 +1,4 @@
-from flask import Flask, redirect, render_template
+from flask import Flask, request, redirect, render_template
 from counter import Counter
 
 app = Flask(__name__)
@@ -16,4 +16,9 @@ def increment():
 @app.route("/reset", methods=["POST"])
 def reset():
     cnt.reset()
+    return redirect("/")
+
+@app.route("/set_value", methods=["POST"])
+def setValue():
+    cnt.set_value(request.form["set"])
     return redirect("/")
