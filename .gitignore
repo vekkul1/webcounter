@@ -1,0 +1,8 @@
+*.xml
+log.html
+report.html
+__pycache__/
+.venv/
+.pytest_cache/
+htmlcov/
+.coverage
